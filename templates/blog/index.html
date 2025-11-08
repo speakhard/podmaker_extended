@@ -1,0 +1,18 @@
+{% set page_title = "Blog" %}
+{% extends "base.html" %}
+{% block content %}
+<h1>Blog</h1>
+{% if posts and posts|length %}
+  <ul class="episodes">
+    {% for p in posts %}
+      <li>
+        <a class="ep-title" href="/blog/{{ p.slug }}/">{{ p.title }}</a>
+        <div class="ep-meta">{{ p.date_display }}</div>
+        <p class="ep-summary">{{ p.excerpt }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="muted">No posts yet. Add Markdown files to <code>content/posts/{{ show.slug }}/</code>.</p>
+{% endif %}
+{% endblock %}

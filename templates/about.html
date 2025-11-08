@@ -1,0 +1,9 @@
+{% set page_title = "About" %}
+{% extends "base.html" %}
+{% block content %}
+  <h1>About the Show</h1>
+  <p>{{ site.tagline }}</p>
+  {% if site.social.website %}
+  <p>Website: <a href="{{ site.social.website }}" target="_blank" rel="noopener">{{ site.social.website }}</a></p>
+  {% endif %}
+{% endblock %}

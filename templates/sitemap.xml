@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/about/</loc></url>
+  <url><loc>/reviews/</loc></url>
+  <url><loc>/blog/</loc></url>
+  {% for ep in episodes %}
+  <url><loc>/episodes/{{ ep.slug }}/</loc></url>
+  {% endfor %}
+</urlset>

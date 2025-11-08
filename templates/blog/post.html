@@ -1,0 +1,10 @@
+{% set page_title = post.title %}
+{% extends "base.html" %}
+{% block content %}
+<article class="episode">
+  <a class="back" href="/blog/">← Blog</a>
+  <h1>{{ post.title }}</h1>
+  <div class="ep-meta">{{ post.date_display }}</div>
+  <div class="content">{{ post.html | safe }}</div>
+</article>
+{% endblock %}

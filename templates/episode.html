@@ -1,0 +1,19 @@
+{% set page_title = ep.title %}
+{% extends "base.html" %}
+{% block content %}
+  <article class="episode">
+    <a class="back" href="/">← All episodes</a>
+    <h1>{{ ep.title }}</h1>
+    <div class="ep-meta">{{ ep.published|date("%B %d, %Y") }}</div>
+    {% if ep.audio %}
+      <audio controls preload="none" src="{{ ep.audio }}" style="width:100%;margin:1rem 0;"></audio>
+    {% endif %}
+    {% if ep.transcript_url %}
+      <p><a href="{{ ep.transcript_url }}" target="_blank" rel="noopener">Transcript</a></p>
+    {% endif %}
+    <div class="content">{{ ep.content|safe }}</div>
+    {% if ep.link %}
+      <p class="muted">Original post: <a href="{{ ep.link }}" target="_blank" rel="noopener">{{ ep.link }}</a></p>
+    {% endif %}
+  </article>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% set page_title = None %}
+{% extends "base.html" %}
+{% block content %}
+  <section class="hero">
+    {% if site.image %}<img class="cover" src="{{ site.image }}" alt="{{ site.title }}">{% endif %}
+    <h1>{{ site.title }}</h1>
+    <p class="lead">{{ site.tagline }}</p>
+    <div class="buttons">
+      {% for k, url in site.subscribe.items() %}
+        <a class="btn" href="{{ url }}" target="_blank" rel="noopener">Subscribe on {{ k|title }}</a>
+      {% endfor %}
+      <a class="btn" href="/reviews/">Reviews</a>
+      <a class="btn" href="/blog/">Blog</a>
+    </div>
+  </section>
+  <section>
+    <h2>Latest Episodes</h2>
+    <ul class="episodes">
+      {% for ep in episodes[:12] %}
+      <li>
+        <a class="ep-title" href="/episodes/{{ ep.slug }}/">{{ ep.title }}</a>
+        <div class="ep-meta">{{ ep.published|date("%b %d, %Y") }}</div>
+        <p class="ep-summary">{{ ep.summary|striptags|truncate(180) }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

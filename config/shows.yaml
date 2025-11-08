@@ -1,0 +1,19 @@
+shows:
+  - title: "Last Best Hope"
+    slug: "last-best-hope"
+    feed: "https://example.com/babylon5.rss"
+    domain: "lastbesthope.example.com"
+    color: "#4b2e83"
+    description: "A Babylon 5 podcast about politics, prophecy, and punchlines."
+    social:
+      website: "https://wrecklamation.net"
+    subscribe:
+      apple: "https://podcasts.apple.com/example"
+      spotify: "https://open.spotify.com/show/example"
+    analytics:
+      plausible_domain: "lastbesthope.example.com"
+      custom_head_html: ""
+    contact:
+      formspree_id: ""
+    reviews:
+      source: "local"

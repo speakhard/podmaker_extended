@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Podcast Sites</title>
+<link rel="stylesheet" href="/static/styles.css">
+<style>.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Podcast Sites</h1>
+    <p class="muted">These are the built static sites in <code>public/</code>.</p>
+    <div class="grid">
+      {% for s in sites %}
+        <div class="card"><a href="{{ s.url }}">{{ s.slug }}</a></div>
+      {% endfor %}
+    </div>
+  </div>
+</body></html>

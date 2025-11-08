@@ -1,0 +1,19 @@
+{% set page_title = "Reviews" %}
+{% extends "base.html" %}
+{% block content %}
+<h1>Listener Reviews</h1>
+{% if reviews and reviews|length %}
+  <ul class="reviews">
+  {% for r in reviews %}
+    <li class="card">
+      <div class="ep-meta">{{ r.date or "" }} — ★{{ r.rating or "?" }}/5 — {{ r.author or "Anonymous" }}</div>
+      <h3>{{ r.title or "" }}</h3>
+      <p>{{ r.text or "" }}</p>
+      {% if r.link %}<p><a href="{{ r.link }}" target="_blank" rel="noopener">Source</a></p>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p class="muted">No reviews found. Drop a JSON file at <code>data/reviews/{{ show.slug }}.json</code> with a list of review objects.</p>
+{% endif %}
+{% endblock %}
