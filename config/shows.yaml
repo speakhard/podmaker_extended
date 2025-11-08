@@ -1,17 +1,17 @@
 shows:
   - title: "Last Best Hope"
     slug: "last-best-hope"
-    feed: "https://example.com/babylon5.rss"
-    domain: "lastbesthope.example.com"
-    color: "#4b2e83"
-    description: "A Babylon 5 podcast about politics, prophecy, and punchlines."
+    feed: "https://pinecast.com/feed/last-best-hope"
+    domain: "lastbesthopeb5.com"
+    color: "#322e83"
+    description: "An explicitly poltical Babylon 5 podcast where fascism isn't science fiction."
     social:
-      website: "https://wrecklamation.net"
+      website: "https://lastbesthopeb5.com"
     subscribe:
-      apple: "https://podcasts.apple.com/example"
-      spotify: "https://open.spotify.com/show/example"
+      apple: "https://podcasts.apple.com/us/podcast/last-best-hope-an-explicitly-political-babylon-5-podcast/id1801636475"
+      spotify: "https://open.spotify.com/show/5ASOLdJDYx8sLbwVZtiujd?si=9f669384887a47fe"
     analytics:
-      plausible_domain: "lastbesthope.example.com"
+      plausible_domain: "lastbesthopeb5.com"
       custom_head_html: ""
     contact:
       formspree_id: ""
