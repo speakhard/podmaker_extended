@@ -171,13 +171,20 @@ def build_show(show, out_root):
         f.write("User-agent: *\nAllow: /\n")
 
 def main():
+    target = os.getenv("SHOW_SLUG")  # e.g., SHOW_SLUG=last-best-hope
+
     with open(os.path.join(BASE_DIR, "config", "shows.yaml"), "r") as f:
         config = yaml.safe_load(f)
+
     ensure_dir(PUBLIC_DIR)
+
     for show in config.get("shows", []):
         slug = show.get("slug") or to_slug(show.get("title") or "podcast")
+        if target and slug != target:
+            continue
         out_root = os.path.join(PUBLIC_DIR, slug)
         build_show(show, out_root)
+
     print(f"\nAll done. Static sites generated in: {PUBLIC_DIR}")
 
 if __name__ == "__main__":
